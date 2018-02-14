@@ -1,0 +1,24 @@
+<ion-menu [content]="nav">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <wlm-user-info [user]="user"></wlm-user-info>
+        <button menuClose ion-item (click)="logout()">
+          <ion-icon item-left="" name="log-out" item-left=""></ion-icon> Sair
+        </button>
+        <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon name="car" item-left=""></ion-icon>
+        {{p.title}}
+      </button> -->
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+
+  <ion-nav id="nav" side="left" [root]="rootPage"></ion-nav>
+

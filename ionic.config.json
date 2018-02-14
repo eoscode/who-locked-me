@@ -1,0 +1,8 @@
+{
+  "name": "garage",
+  "app_id": "3d5c1150",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

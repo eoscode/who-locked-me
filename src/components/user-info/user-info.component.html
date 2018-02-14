@@ -1,0 +1,11 @@
+<div *ngIf="user">
+  <ion-avatar>
+    <img class="round" [src]="user.picture || 'assets/images/no-photo.jpg'">
+  </ion-avatar>
+  <h2 text-center>{{ user.name }}</h2>
+  <p text-center>{{ user.email }}</p>
+</div>
+<!--
+  ionic cordova plugin add phonegap-plugin-push
+<ng-template #loading>Carregando dados do usuário...</ng-template>
+-->

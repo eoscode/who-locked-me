@@ -1,0 +1,60 @@
+wlm-seat-status {
+
+  .icon-car {
+    font-size: 72px;
+  }
+
+  .card-title {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  .seat-on {
+    float: right;
+    height: 5px;
+    width: 100%;
+    //background-color: color($colors, seat-on);
+  }
+
+  .icon-seat-on {
+    color: color($colors, seat-backgroud);
+  }
+
+  .seat-off {
+    float: right;
+    height: 5px;
+    width: 100%;
+   // background-color: color($colors, seat-off);
+  }
+
+  .icon-seat-off {
+    color: black;
+  }
+
+  .icon-seat-off-user {
+    color: color($colors, seat-off);
+  }
+
+  .icon-seat-off-schedule {
+    color: color($colors, seat-off-schedule);
+  }
+
+  // .icon-seat-on {
+  //   color: color($colors, seat-backgroud);
+  // }
+
+  .seat-off-external-user {
+    float: right;
+    height: 5px;
+    width: 100%;
+    background-color: color($colors, seat-off-external-user);
+  }
+
+  //  .ion-content.content {
+  //   .scroll-content {
+  //     padding-top: 1px;
+  //     padding-bottom: 1px;
+  //   }
+  // }
+
+}

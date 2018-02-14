@@ -1,0 +1,81 @@
+{
+  "name": "garage",
+  "version": "0.0.1",
+  "author": "Eduardo Santos",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "5.0.1",
+    "@angular/compiler": "5.0.1",
+    "@angular/compiler-cli": "5.0.1",
+    "@angular/core": "5.0.1",
+    "@angular/forms": "5.0.1",
+    "@angular/http": "5.0.1",
+    "@angular/platform-browser": "5.0.1",
+    "@angular/platform-browser-dynamic": "5.0.1",
+    "@ionic-native/core": "^4.3.0",
+    "@ionic-native/date-picker": "^4.4.2",
+    "@ionic-native/dialogs": "^4.3.3",
+    "@ionic-native/google-plus": "^4.3.3",
+    "@ionic-native/keyboard": "^4.3.2",
+    "@ionic-native/splash-screen": "4.4.0",
+    "@ionic-native/status-bar": "4.4.0",
+    "@ionic/storage": "2.1.3",
+    "angularfire2": "^5.0.0-rc.3",
+    "cordova-android": "^6.3.0",
+    "cordova-browser": "5.0.3",
+    "cordova-ios": "~4.5.3",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-datepicker": "^0.9.3",
+    "cordova-plugin-device": "^1.1.4",
+    "cordova-plugin-dialogs": "^1.3.3",
+    "cordova-plugin-firebase": "^0.1.24",
+    "cordova-plugin-googleplus": "^5.1.1",
+    "cordova-plugin-ionic-webview": "^1.1.16",
+    "cordova-plugin-splashscreen": "^4.0.3",
+    "cordova-plugin-statusbar": "git+https://github.com/apache/cordova-plugin-statusbar.git",
+    "cordova-plugin-whitelist": "^1.3.1",
+    "firebase": "4.6.2",
+    "ionic-angular": "3.9.2",
+    "ionic-plugin-keyboard": "^2.2.1",
+    "ionic2-super-tabs": "^4.1.4",
+    "ionicons": "3.0.0",
+    "rxjs": "5.5.2",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.1.0",
+    "typescript": "2.6.1"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-firebase": {},
+      "cordova-plugin-compat": {},
+      "ionic-plugin-keyboard": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.632361546592-29cmvpihc68klr76a0lufmegt0efd0gv"
+      },
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-datepicker": {}
+    },
+    "platforms": [
+      "android",
+      "ios",
+      "browser"
+    ]
+  }
+}

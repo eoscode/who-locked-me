@@ -1,0 +1,134 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+a[disabled],
+button[disabled],
+[ion-button][disabled] {
+  opacity: .9;
+}
+
+form {
+  .item {
+    .label[stacked] {
+      .icon {
+        position: relative;
+        top: 1px;
+
+        &[name=calendar] {
+          top: 0;
+        }
+      }
+    }
+    + p {
+      background: color($colors, danger);
+      color: white;
+      margin: 0;
+      padding: 1em 0 1em 16px;
+      position: relative;
+      top: -3px;
+    }
+
+    &.item-input-transparent {
+      background-color: transparent;
+
+      .item-inner {
+        border: 0;
+
+        .input,
+        .label {
+          color: white
+        }
+
+        .text-input {
+          &::placeholder {
+            color: rgba(255,255,255,.8);
+          }
+        }
+      }
+    }
+  }
+}
+
+.no-scroll {
+  .scroll-content {
+    overflow: hidden;
+  }
+}
+
+.ss-messages {
+  ion-avatar {
+    align-self: flex-start;
+  }
+}
+
+.ss-alert {
+  ion-icon {
+    left: 10px;
+    position: relative;
+  }
+}
+
+.align-top,
+.btn-popover {
+  display: flex;
+  align-self: flex-start;
+}
+
+ion-toolbar {
+  ion-input {
+    .text-input {
+      color: white;
+      &::placeholder {
+        color: color($colors, toolbar_input_color);
+      }
+    }
+  }
+
+  .item-block {
+    background: transparent;
+    padding-left: 8px;
+  }
+}
+
+ion-list {
+  ion-avatar {
+    img {
+      margin-top: 5px;
+    }
+  }
+}
+
+.offline {
+  .header {
+    .toolbar-background {
+      background-color: color($colors, offline);
+    }
+  }
+}
+
+.avatar-circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.toolbar {
+  .item-input {
+    .item-inner {
+      border-bottom-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}

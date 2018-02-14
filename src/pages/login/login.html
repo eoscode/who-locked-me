@@ -1,0 +1,23 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+-->
+
+<ion-content padding class="no-scroll">
+
+<ion-content padding class="no-scroll">
+  <button ion-button block icon-left color="google" (click)="connectWithGoogle()" [disabled]="isLoading">
+    <ion-icon name="logo-google" [hidden]="isLoading"></ion-icon>
+    <ion-spinner *ngIf="isLoading" color="light"></ion-spinner> Login com Google
+  </button>
+</ion-content>

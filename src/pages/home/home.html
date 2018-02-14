@@ -1,0 +1,48 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Quem me tranca?</ion-title>
+
+    <ion-buttons end *ngIf="false">
+      <button ion-button icon-only (click)="scheduleCheckout(fab)">
+        <ion-icon name="time"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <super-tabs id="mainTabs">
+    <super-tab *ngFor="let page of pages" [root]="page.component" [rootParams]="{garage_id: page.uid}" [title]="page.title"></super-tab>
+  </super-tabs>
+
+  <ion-fab #fab bottom right *ngIf="currentSeat">
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="scheduleCheckout(fab)">
+        <ion-icon name="time"></ion-icon>
+        <div class="label">Vou sair...</div>
+      </button>
+
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-datetime hidden=true #dateTime text-center [(ngModel)]="checkOutTime" (ionChange)="checkOutTimeChanged($event)" displayFormat="HH:mm"
+    pickerFormat="HH:mm" cancelText="Cancelar" doneText="OK"></ion-datetime>
+
+</ion-content>
+
+<!-- <ion-content>
+<ion-slides>
+    <ion-slide *ngFor="let page of pages">
+      <ion-nav id="nav" [root]="page.component" [rootParams]="1"></ion-nav>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content> -->

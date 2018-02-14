@@ -1,0 +1,42 @@
+
+
+<!-- <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{garageName}}</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<!--
+pullingText="Pull to refresh..."
+refreshingSpinner="bubbles"
+refreshingText="Refreshing..." -->
+<ion-content>
+<!-- <ion-refresher (ionRefresh)="refreshTasks($event)">
+    <ion-refresher-content>
+  </ion-refresher-content>
+</ion-refresher> -->
+
+<div text-center hidden=false>
+  Muro
+</div>
+
+<ion-grid no-padding>
+    <ion-row>
+      <ion-col col-4 *ngFor="let seat of seats | async" (click)="onClick(seat)" (press)="takenSeatForAnotherUser(seat)">
+        <!-- <ion-card text-center>
+            <ion-card-content class="card-title">
+            {{getLabel(seat)}}
+          </ion-card-content>
+          <ion-icon name="car" [ngClass]="getStatusBackgroudColor(seat)"></ion-icon>
+          <samp [ngClass]="getStatusColor(seat)"></samp>
+        </ion-card> -->
+        <wlm-seat-status [seat]="seat"></wlm-seat-status>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
