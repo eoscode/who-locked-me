@@ -62,71 +62,68 @@ export class GarageCheckInPage {
     this.loadSeats();
   }
 
-public refreshTasks(refresher: Refresher): void {
+  public refreshTasks(refresher: Refresher): void {
     this.loadSeats();
     refresher.complete();
   }
 
-public onClick(seat: Seat): void {
-  let checkin: Checkin = seat.checkin;
-  if (checkin) {
-    if (checkin.user.external) {
-      return;
-    }
-    this.checkOut(seat);
-  } else  {
-    this.checkIn(seat);
-  }
-  /* let localSeat: Seat = this.userService.currentUser.currentSeat;
-  if (localSeat != null
-    && (seat.uid == localSeat.uid)) {
-    this.checkOut(seat);
-  } else {
-    this.checkIn(seat);
-  } */
-}
+  public onClick(seat: Seat): void {
+    let currentUser = this.userService.currentUser;
+    let currentSeat: Seat = currentUser.currentSeat;
 
-private checkIn(seat: Seat): void {
-    let checkin = seat.checkin;
-    let localSeat: Seat = this.userService.currentUser.currentSeat;
+    let checkin: Checkin = seat.checkin;
 
-    if (checkin != null) {
-      if (checkin.scheduledCheckout) {
-        this.alertDialog({
-          title: checkin.user.name,
-          message: `"Vou sair às ${checkin.scheduledCheckout}h`
-        });
+    if (checkin) {
+
+      if (currentUser.uid === checkin.user.uid) {
+        this.checkOut(seat);
       } else {
-        this.alertDialog({
-          title: "Check-In",
-          message: `${checkin.user.name} já está utilizando a vaga.`
-        });
-      }
-    } else {
 
-      if (localSeat != null && localSeat.uid != seat.uid) {
+        if (checkin.scheduledCheckout) {
+          this.alertDialog({
+            title: checkin.user.name,
+            message: `Vou sair às ${checkin.scheduledCheckout}h`
+          });
+        } else {
+          this.alertDialog({
+            title: "Check-In",
+            message: `${checkin.user.name} está utilizando a vaga.`
+          });
+        }
+
+      }
+
+    } else  {
+
+      if (currentSeat && currentSeat.uid !== seat.uid) {
         this.alertDialog({
           title: "Check-In",
           message: "Você já está utilizando uma vaga."
         });
       } else {
-
-        let checkin: Checkin = {
-          user: this.userService.currentUser,
-          chekedByAnotherUser: null
-        };
-
-        this.garageService.checkIn(seat, checkin)
-          .then((message: string) => {
-            let toast = this.toastCtrl.create({
-              message: message,
-              duration: 2000,
-              position: 'bottom'
-            });
-            toast.present();
-          });
+        this.checkIn(seat);
       }
+
     }
+
+  }
+
+  private checkIn(seat: Seat): void {
+
+    let checkin: Checkin = {
+      user: this.userService.currentUser,
+      chekedByAnotherUser: null
+    };
+
+    this.garageService.checkIn(seat, checkin)
+      .then((message: string) => {
+        let toast = this.toastCtrl.create({
+          message: message,
+          duration: 2000,
+          position: 'bottom'
+        });
+        toast.present();
+      });
   }
 
   private checkOut(seat: Seat): void {
@@ -153,7 +150,7 @@ private checkIn(seat: Seat): void {
     });
   }
 
-  takenSeatForAnotherUser(seat: Seat): void {
+  public takenSeatForAnotherUser(seat: Seat): void {
     if (seat.checkin != null) {
 
       this.confirmCheckOut(seat).then(result => {
